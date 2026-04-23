@@ -1,0 +1,29 @@
+#Virtual Environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+#DVC handling
+/data/raw/
+/data/processed/
+/data/embeddings/
+/models/
+
+#mlflow artifacts
+mlruns/
+mlartifacts/
+
+#IDE
+.vscode/settings.json
+.idea/
+
+#OS
+.DS_Store
+Thumbs.db
+
+#Streamlit
+.streamlit/secrets.toml
+/models
+/yolov8m.pt
