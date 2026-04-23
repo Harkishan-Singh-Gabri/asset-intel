@@ -1,0 +1,16 @@
+stages:
+  download:
+    cmd: python src/data/download.py
+    deps:
+      - src/data/download.py
+    outs:
+      - data/raw
+
+  augment:
+    cmd: python src/data/augment.py
+    deps:
+      - src/data/augment.py
+      - data/raw
+    outs:
+      - data/processed
+      
