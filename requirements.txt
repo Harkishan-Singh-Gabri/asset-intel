@@ -1,47 +1,49 @@
-# Deep Learning
-torch==2.2.0
-torchvision==0.17.0
-pytorch-lightning==2.2.0
-transformers==4.38.0
+# Core 
+numpy==1.26.4
+pandas==2.2.0
+pillow==10.2.0
+
+# Deep Learning 
+torch
+torchvision
 
 # Vision Models
-ultralytics==8.1.0          
-open-clip-torch==2.24.0   
+ultralytics==8.1.0
+open-clip-torch==2.24.0
+pytorch-lightning
 
 # Vector Search
-faiss-cpu==1.7.4
-chromadb==0.4.22
+faiss-cpu
+chromadb
 
 # MLOps
 dvc[gdrive]
-mlflow==2.11.0
-evidently==0.4.16
-prefect==2.16.5
-bentoml==1.2.5
+mlflow
+evidently
+prefect
+bentoml
 
 # Backend
-fastapi==0.110.0
-uvicorn[standard]==0.27.0
-redis==5.0.2
-boto3==1.34.0
-asyncpg==0.29.0
-psycopg2-binary==2.9.9
-pgvector==0.2.4
-sqlalchemy==2.0.27
+fastapi
+uvicorn[standard]
+redis
+boto3
+asyncpg
+psycopg2-binary
+pgvector
+sqlalchemy
 
 # Data & Augmentation
-albumentations==1.3.1
-pillow==10.2.0
-numpy==1.26.4
-pandas==2.2.0
-scikit-learn==1.4.0
+albumentations
+scikit-learn
 fiftyone
+transformers
 
 # UI
-streamlit==1.32.0
+streamlit
 
 # Utils
-python-dotenv==1.0.1
-pydantic==2.6.3
-tqdm==4.66.2
-pytest==8.0.2
+python-dotenv
+pydantic
+tqdm
+pytest
