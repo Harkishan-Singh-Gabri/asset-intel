@@ -2,6 +2,9 @@ import os
 from sqlalchemy import create_engine, Column, String, Float, Boolean, DateTime, JSON
 from sqlalchemy.orm import declarative_base, sessionmaker
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./asset_intel.db")
 

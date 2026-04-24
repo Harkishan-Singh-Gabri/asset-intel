@@ -4,9 +4,13 @@ import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, UploadFile, File, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.encoders import jsonable_encoder
 from sqlalchemy.orm import Session
 from PIL import Image
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from .db import init_db, get_db, ScanRecord
 from .cache import get_cached, set_cached
@@ -73,12 +77,12 @@ async def scan_asset(
             db.add(record)
         db.commit()
 
-        response = {
+        response = jsonable_encoder({
             "status": "ok",
             "worker_id": worker_id,
             "items_found": len(results),
             "results": results
-        }
+        })
 
         set_cached(img, response)
         return response
