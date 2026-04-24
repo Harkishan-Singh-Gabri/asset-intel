@@ -1,29 +1,40 @@
-#Virtual Environment
+# Virtual Environment
 .venv/
 __pycache__/
 *.pyc
 *.pyo
 .env
 
-#DVC handling
+# DVC handled — never commit these to git
 /data/raw/
 /data/processed/
 /data/embeddings/
 /models/
 
-#mlflow artifacts
+# YOLO weights — DVC tracked
+*.pt
+
+# YOLO training output
+runs/
+
+# MLflow
 mlruns/
 mlartifacts/
 
-#IDE
+# Database
+asset_intel.db
+
+# IDE
 .vscode/settings.json
 .idea/
 
-#OS
+# OS
 .DS_Store
 Thumbs.db
 
-#Streamlit
+# Streamlit
 .streamlit/secrets.toml
-/models
-/yolov8m.pt
+
+# Misc generated files
+*.csv
+dvc.lock
