@@ -397,8 +397,8 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 > Built to demonstrate how computer vision and vector search can eliminate manual IT asset auditing — proving Solution Architect level thinking by combining MLOps, CV, and backend engineering into one deployable system.
 
 ### Connect
-- 🌐 **GitHub**: [@yourusername](https://github.com/Harkishan-Singh-Gabri)
-- 💼 **LinkedIn**: [Your Name](https://www.linkedin.com/in/harkishan-singh-gabri/)
+- 🌐 **GitHub**: Harkishan-Singh-Gabri(https://github.com/Harkishan-Singh-Gabri)
+- 💼 **LinkedIn**: Harkishan Singh Gabri(https://www.linkedin.com/in/harkishan-singh-gabri/)
 
 ---
 
