@@ -10,6 +10,14 @@ A production-grade MLOps system that lets warehouse workers **photograph hardwar
 
 ---
 
+## 📸 Demo
+
+![Asset Intel Scanner UI](assets/demo.png)
+
+> Worker uploads a photo of an HP monitor with keyboard — system detects **Computer monitor** (97% YOLO confidence, 0.849 CLIP score) and **Computer keyboard** in one scan.
+
+---
+
 ## 🧠 Why This Project?
 
 Large IT firms manage millions of physical assets — laptops, servers, routers. Manual cataloging costs thousands of man-hours and introduces audit risk. Asset Intel solves this by combining computer vision with vector search:
@@ -84,15 +92,12 @@ Large IT firms manage millions of physical assets — laptops, servers, routers.
 
 ```
 ASSET-INTEL/
+├── assets/
+│   └── demo.png                # Demo screenshot
 ├── data/
 │   ├── raw/                    # DVC tracked — Open Images V7 (1000 images)
 │   ├── processed/              # DVC tracked — augmented warehouse images
 │   ├── yolo/                   # DVC tracked — YOLO format dataset
-│   │   ├── images/train/
-│   │   ├── images/val/
-│   │   ├── labels/train/
-│   │   ├── labels/val/
-│   │   └── dataset.yaml
 │   └── embeddings/
 │       ├── assets.faiss        # FAISS vector index
 │       └── chroma/             # ChromaDB metadata store
@@ -144,7 +149,7 @@ ASSET-INTEL/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/ASSET-INTEL.git
+git clone https://github.com/Harkishan-Singh-Gabri/ASSET-INTEL.git
 cd ASSET-INTEL
 ```
 
@@ -249,15 +254,15 @@ with open("hardware_photo.jpg", "rb") as f:
   "items_found": 2,
   "results": [
     {
-      "detected_class": "Laptop",
-      "yolo_confidence": 0.95,
+      "detected_class": "Computer monitor",
+      "yolo_confidence": 0.97,
       "top_match": {
         "metadata": {
-          "category": "Laptop",
-          "asset_id": "255",
-          "image_file": "00f7ecdaa0f46d0d.jpg"
+          "category": "Television",
+          "asset_id": "241",
+          "image_file": "00ea0267e19c63cd.jpg"
         },
-        "score": 0.741
+        "score": 0.849
       },
       "alternatives": [],
       "bbox": [230, 147, 649, 562]
@@ -346,8 +351,6 @@ DATABASE_URL=postgresql://user:pass@postgres:5432/assetintel
 
 ---
 
----
-
 ## 🧪 Running the Full Pipeline
 
 ```bash
@@ -397,8 +400,8 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 > Built to demonstrate how computer vision and vector search can eliminate manual IT asset auditing — proving Solution Architect level thinking by combining MLOps, CV, and backend engineering into one deployable system.
 
 ### Connect
-- 🌐 **GitHub**: [@yourusername](https://github.com/Harkishan-Singh-Gabri)
-- 💼 **LinkedIn**: [Your Name](https://www.linkedin.com/in/harkishan-singh-gabri/)
+- 🌐 **GitHub**: [@Harkishan-Singh-Gabri](https://github.com/Harkishan-Singh-Gabri)
+- 💼 **LinkedIn**: [Harkishan Singh Gabri](https://www.linkedin.com/in/harkishan-singh-gabri/)
 
 ---
 
@@ -421,5 +424,4 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 - **Model**: YOLOv8m — mAP50: 0.510
 - **Pipeline**: Fully operational locally
 - **Deployment**: Docker config ready
-
 
