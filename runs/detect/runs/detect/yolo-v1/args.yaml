@@ -2,7 +2,7 @@ task: detect
 mode: train
 model: yolov8m.pt
 data: C:\Users\HARKISHAN\Desktop\MY\Asset-Intel\data\yolo\dataset.yaml
-epochs: 30
+epochs: 100
 time: null
 patience: 100
 batch: 8

@@ -20,7 +20,7 @@ def train_yolo():
     with mlflow.start_run(run_name="yolov8m-v1"):
         mlflow.log_params({
             "model": "yolov8m",
-            "epochs": 30,
+            "epochs": 100,
             "imgsz": 640,
             "batch": 8,
         })
@@ -29,20 +29,20 @@ def train_yolo():
 
         results = model.train(
             data=os.path.abspath("data/yolo/dataset.yaml"),
-            epochs=30,
+            epochs=100,
             imgsz=640,
             batch=8,
             device=device,
             project="runs/detect",
             name="yolo-v1",
             exist_ok=True,
-            verbose=True
+            verbose=True,
         )
 
         best_pt = None
         for pt in Path("runs").rglob("best.pt"):
             best_pt = str(pt)
-            print(f"Found weights → {best_pt}")
+            print(f"Found weights -> {best_pt}")
             break
 
         # Copy to models/ for DVC
@@ -52,7 +52,7 @@ def train_yolo():
         if best_pt:
             shutil.copy(best_pt, dest)
             mlflow.log_artifact(dest)
-            print(f"Weights saved → {dest}")
+            print(f"Weights saved -> {dest}")
         else:
             print("best.pt not found anywhere in runs/")
 

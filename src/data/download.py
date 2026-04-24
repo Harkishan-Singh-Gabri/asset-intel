@@ -17,7 +17,7 @@ def download_hardware_images():
         split="train",
         label_types=["detections"],
         classes=CATEGORIES,
-        max_samples=300,
+        max_samples=1000,
         dataset_name="hardare-assets"
     )
 
